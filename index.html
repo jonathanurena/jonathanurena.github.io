@@ -5,696 +5,573 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — STRDE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 ```
 :root {
-  --ink:        #000000;
-  --ink-soft:   #222222;
-  --ink-mute:   #666666;
-  --rule:       #dddddd;
-  --bg:         #ffffff;
-  --surface:    #ffffff;
-  --accent:     #000000;
-  --accent-dim: #f0f0f0;
-  --badge-bg:   #f5f5f5;
-  --ff-head:    'Playfair Display', Georgia, serif;
-  --ff-body:    'DM Sans', system-ui, sans-serif;
+  --bg-top:   #FBFBFD;
+  --bg-bot:   #F2F2F7;
+  --ink:      #0A0A0F;
+  --muted:    #8E8E93;
+  --sub:      #3C3C43;
+  --accent:   #5146E6;
+  --accent-2: #6B5CFF;
+  --rule:     rgba(10,10,15,.08);
+  --surface:  #ffffff;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--ink);
-  font-family: var(--ff-body);
-  font-size: 16px;
-  line-height: 1.75;
+  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bot) 100%);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-/* ── TOP BAR ── */
+/* ── NAV ── */
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(251,251,253,.82);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
   border-bottom: 1px solid var(--rule);
 }
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.nav-inner {
+  max-width: 1080px; margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
 }
+/* Logo — single solid color, matches reference */
 .logo {
-  font-family: var(--ff-head);
-  font-size: 1.55rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  color: var(--ink);
+  font-size: 1.35rem; font-weight: 700;
+  letter-spacing: -.03em; color: var(--ink);
   text-decoration: none;
 }
-.logo span { color: var(--ink); }
-.header-label {
-  font-size: .75rem;
-  font-weight: 500;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  padding: .3rem .75rem;
+.nav-pill {
+  font-size: .7rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted);
   border: 1px solid var(--rule);
-  border-radius: 99px;
+  border-radius: 100px; padding: .28rem .9rem;
   background: var(--surface);
 }
 
 /* ── HERO ── */
 .hero {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 5rem 2rem 3.5rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 2rem;
+  text-align: center;
+  padding: clamp(5rem,12vw,9rem) clamp(1.25rem,5vw,2.5rem) clamp(3rem,6vw,5rem);
   border-bottom: 1px solid var(--rule);
+  animation: fadeUp .7s cubic-bezier(.22,.68,0,1.2) both;
 }
 .hero-eyebrow {
-  font-size: .72rem;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  font-family: var(--ff-head);
-  font-size: clamp(2.4rem, 5vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--ink);
+  font-size: .7rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.25rem;
+  display: flex; align-items: center; justify-content: center; gap: .55rem;
 }
-.hero-meta {
-  text-align: right;
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; display: block;
+  width: 28px; height: 1.5px;
+  background: var(--accent); border-radius: 2px;
 }
-.hero-meta p {
-  font-size: .82rem;
-  color: var(--ink-mute);
-  font-weight: 300;
-  line-height: 1.9;
+.hero-title {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700; letter-spacing: -.04em;
+  line-height: 1.04; color: var(--ink);
+  margin-bottom: 2rem;
 }
-.hero-meta strong { color: var(--ink-soft); font-weight: 500; }
+.hero-chips {
+  display: flex; gap: .6rem; flex-wrap: wrap;
+  justify-content: center;
+}
+.chip {
+  font-size: .75rem; font-weight: 400; color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 100px; padding: .3rem 1rem;
+  display: inline-flex; align-items: center; gap: .35rem;
+}
+.chip b { font-weight: 600; color: var(--sub); }
 
-/* ── LAYOUT ── */
-.wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem 6rem;
+/* ── SHELL ── */
+.shell {
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(2.5rem,6vw,5rem) clamp(1.25rem,5vw,2.5rem) clamp(5rem,10vw,8rem);
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 4rem;
+  grid-template-columns: 190px 1fr;
+  gap: clamp(2rem,4vw,5rem);
   align-items: start;
 }
 
-/* ── SIDEBAR NAV ── */
+/* ── SIDEBAR ── */
 .toc {
-  position: sticky;
-  top: 88px;
+  position: sticky; top: 72px;
+  animation: fadeIn .6s ease .2s both;
 }
 .toc-label {
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-bottom: 1rem;
-  padding-bottom: .5rem;
-  border-bottom: 1px solid var(--rule);
+  font-size: .65rem; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .85rem;
+  padding-bottom: .6rem; border-bottom: 1px solid var(--rule);
 }
-.toc ol {
-  list-style: none;
-  counter-reset: toc;
-}
-.toc ol li {
-  counter-increment: toc;
-  margin-bottom: .2rem;
-}
-.toc ol li a {
-  display: flex;
-  align-items: baseline;
-  gap: .5rem;
-  font-size: .8rem;
-  color: var(--ink-soft);
+.toc-list { list-style: none; }
+.toc-list li { margin-bottom: .05rem; }
+.toc-list a {
+  font-size: .78rem; font-weight: 400; color: var(--sub);
   text-decoration: none;
-  padding: .35rem .5rem;
-  border-radius: 6px;
+  display: flex; align-items: baseline; gap: .45rem;
+  padding: .3rem .5rem; border-radius: 7px;
   transition: background .15s, color .15s;
-  font-weight: 400;
 }
-.toc ol li a::before {
-  content: counter(toc, decimal-leading-zero);
-  font-size: .65rem;
-  color: var(--ink-mute);
-  font-weight: 300;
-  flex-shrink: 0;
-}
-.toc ol li a:hover {
-  background: var(--badge-bg);
-  color: var(--ink);
-}
+.toc-num { font-size: .6rem; color: var(--muted); font-weight: 300; flex-shrink: 0; }
+.toc-list a:hover { background: rgba(81,70,230,.07); color: var(--accent); }
+.toc-list a:hover .toc-num { color: var(--accent); }
 
 /* ── CONTENT ── */
 .content { min-width: 0; }
 
-.intro-block {
-  background: var(--badge-bg);
-  border: 1px solid #cccccc;
-  border-radius: 12px;
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 3rem;
+/* intro banner */
+.intro-banner {
+  background: rgba(81,70,230,.06);
+  border: 1px solid rgba(81,70,230,.18);
+  border-radius: 18px; padding: 1.6rem 2rem;
+  margin-bottom: 3.5rem;
+  animation: fadeUp .6s cubic-bezier(.22,.68,0,1.2) .15s both;
 }
-.intro-block p {
-  font-size: .92rem;
-  color: var(--ink-soft);
-  font-weight: 300;
-  line-height: 1.8;
+.intro-banner p {
+  font-size: .93rem; color: var(--sub);
+  line-height: 1.85; margin: 0;
 }
-.intro-block strong { color: var(--ink); font-weight: 500; }
+.intro-banner strong { color: var(--accent); font-weight: 600; }
 
-section { margin-bottom: 3.5rem; scroll-margin-top: 90px; }
+/* sections */
+section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 80px;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .55s cubic-bezier(.22,.68,0,1.2), transform .55s cubic-bezier(.22,.68,0,1.2);
+}
+section.visible { opacity: 1; transform: none; }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-  padding-bottom: .75rem;
+.sec-header {
+  display: flex; align-items: center; gap: .8rem;
+  margin-bottom: 1.35rem; padding-bottom: .85rem;
   border-bottom: 1px solid var(--rule);
 }
-.section-num {
-  font-size: .65rem;
-  font-weight: 600;
-  letter-spacing: .14em;
-  color: #ffffff;
-  background: #000000;
-  padding: .2rem .55rem;
-  border-radius: 4px;
+.sec-num {
+  font-size: .6rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(81,70,230,.08);
+  border: 1px solid rgba(81,70,230,.18);
+  padding: .22rem .65rem; border-radius: 100px;
   flex-shrink: 0;
 }
 section h2 {
-  font-family: var(--ff-head);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.3;
+  font-size: 1.5rem; font-weight: 700;
+  letter-spacing: -.025em; color: var(--ink); line-height: 1.15;
 }
-
-section p {
-  font-size: .94rem;
-  color: var(--ink-soft);
-  font-weight: 300;
-  margin-bottom: 1rem;
-  line-height: 1.85;
-}
-section p:last-child { margin-bottom: 0; }
-
 section h3 {
-  font-family: var(--ff-head);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
+  font-size: .95rem; font-weight: 600;
+  letter-spacing: -.01em; color: var(--ink);
   margin: 1.75rem 0 .6rem;
 }
-
-ul.policy-list, ol.policy-list {
-  padding-left: 1.25rem;
-  margin-bottom: 1rem;
+section p {
+  font-size: .92rem; color: var(--sub);
+  line-height: 1.85; margin-bottom: 1rem;
 }
-ul.policy-list li, ol.policy-list li {
-  font-size: .93rem;
-  color: var(--ink-soft);
-  font-weight: 300;
-  line-height: 1.8;
-  margin-bottom: .35rem;
-}
-ul.policy-list li::marker { color: var(--ink); }
+section p:last-child { margin-bottom: 0; }
+section a { color: var(--accent); text-decoration: none; }
+section a:hover { text-decoration: underline; }
 
+/* list */
+.plist { list-style: none; padding: 0; margin-bottom: 1rem; }
+.plist li {
+  display: flex; gap: .85rem; align-items: flex-start;
+  font-size: .91rem; color: var(--sub); line-height: 1.8;
+  padding: .75rem 0; border-bottom: 1px solid var(--rule);
+}
+.plist li:first-child { border-top: 1px solid var(--rule); }
+.plist li::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent); flex-shrink: 0;
+  margin-top: .65rem;
+}
+.plist li strong { color: var(--ink); font-weight: 600; }
+
+/* callout */
+.callout {
+  display: flex; gap: .9rem; align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  padding: 1rem 1.35rem; margin: 1.25rem 0;
+}
+.callout-icon { flex-shrink: 0; margin-top: .1rem; }
+.callout-icon svg { width: 17px; height: 17px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.callout p { font-size: .86rem; color: var(--sub); margin: 0; line-height: 1.72; }
+.callout p strong { color: var(--accent); font-weight: 600; }
+
+/* card grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: 1.25rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 18px; overflow: hidden;
+  margin: 1.2rem 0;
 }
 .card {
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  padding: 1.1rem 1.25rem;
-  transition: box-shadow .2s, border-color .2s;
+  background: var(--surface); padding: 1.35rem 1.4rem 1.5rem;
+  position: relative; transition: background .2s;
+  cursor: default;
 }
-.card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.06); border-color: #aaaaaa; }
-.card-icon { font-size: 1.4rem; margin-bottom: .5rem; }
-.card-title {
-  font-size: .78rem;
-  font-weight: 600;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: .3rem;
+.card::after {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .28s cubic-bezier(.4,0,.2,1);
 }
-.card-desc {
-  font-size: .8rem;
-  color: var(--ink-mute);
-  font-weight: 300;
-  line-height: 1.65;
+.card:hover { background: rgba(81,70,230,.04); }
+.card:hover::after { transform: scaleX(1); }
+.card-icon {
+  width: 34px; height: 34px;
+  background: rgba(81,70,230,.08);
+  border: 1px solid rgba(81,70,230,.16);
+  border-radius: 9px; margin-bottom: .9rem;
+  display: flex; align-items: center; justify-content: center;
 }
+.card-icon svg { width: 17px; height: 17px; stroke: var(--accent); fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.card-title { font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); margin-bottom: .3rem; }
+.card-desc  { font-size: .79rem; color: var(--muted); line-height: 1.6; }
 
-.highlight-box {
-  background: var(--surface);
-  border-left: 3px solid #000000;
-  border-radius: 0 8px 8px 0;
-  padding: 1rem 1.25rem;
-  margin: 1.25rem 0;
+/* google badge */
+.g-badge {
+  display: inline-flex; align-items: center; gap: .55rem;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 100px; padding: .38rem .95rem .38rem .7rem;
+  font-size: .76rem; font-weight: 500;
+  color: var(--sub); margin: .9rem 0;
 }
-.highlight-box p {
-  font-size: .88rem;
-  margin: 0;
-}
+.g-dots { display: flex; gap: 3px; }
+.g-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.g-dot:nth-child(2) { opacity: .6; }
+.g-dot:nth-child(3) { opacity: .35; }
+.g-dot:nth-child(4) { opacity: .15; }
 
-.google-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: 8px;
-  padding: .45rem .9rem;
-  font-size: .8rem;
-  color: var(--ink-soft);
-  font-weight: 400;
-  margin: .75rem 0;
-}
-.g-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-.g-blue  { background: #555555; }
-.g-red   { background: #888888; }
-.g-yellow{ background: #aaaaaa; }
-.g-green { background: #cccccc; }
-
-/* ── CONTACT BLOCK ── */
+/* contact block */
 .contact-block {
-  background: var(--ink);
-  color: #fff;
-  border-radius: 14px;
-  padding: 2rem 2.25rem;
-  margin-top: 3rem;
+  background: var(--ink); border-radius: 22px;
+  padding: 2.5rem 2.5rem 2.25rem; margin-top: 3rem;
 }
-.contact-block h2 {
-  font-family: var(--ff-head);
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: .5rem;
+.contact-block .sec-num {
+  color: #a5b4fc;
+  background: rgba(165,180,252,.12);
+  border-color: rgba(165,180,252,.22);
 }
-.contact-block p {
-  font-size: .88rem;
-  color: rgba(255,255,255,.6);
-  font-weight: 300;
-  margin-bottom: .75rem;
-}
-.contact-block a {
-  color: #0000EE;
-  text-decoration: none;
-  font-weight: 400;
-}
+.contact-block .sec-header { border-bottom-color: rgba(255,255,255,.08); }
+.contact-block h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -.025em; color: #fff; line-height: 1.15; }
+.contact-block p { font-size: .9rem; color: rgba(255,255,255,.45); margin-bottom: .8rem; line-height: 1.75; }
+.contact-block strong { color: #fff; font-weight: 500; }
+.contact-block a { color: #a5b4fc; }
 .contact-block a:hover { text-decoration: underline; }
 
-/* ── FOOTER ── */
+/* footer */
 footer {
+  text-align: center;
+  padding: clamp(2rem,5vw,3rem) 1.25rem clamp(2.5rem,6vw,4rem);
   border-top: 1px solid var(--rule);
-  background: var(--surface);
 }
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.75rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.footer-inner p {
-  font-size: .78rem;
-  color: var(--ink-mute);
-  font-weight: 300;
-}
-.footer-inner a {
-  color: #0000EE;
-  text-decoration: none;
-  font-size: .78rem;
-}
-.footer-logo {
-  font-family: var(--ff-head);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  color: var(--ink);
-}
-.footer-logo span { color: var(--ink); }
+.footer-logo { font-size: .95rem; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+.footer-copy { font-size: .72rem; color: var(--muted); margin-top: .35rem; }
+.footer-copy a { color: var(--accent); text-decoration: none; }
+.footer-copy a:hover { text-decoration: underline; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 780px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-meta { text-align: left; }
-  .wrapper { grid-template-columns: 1fr; gap: 2rem; }
-  .toc { display: none; }
+  .shell { grid-template-columns: 1fr; }
+  .toc   { display: none; }
+}
+@media (max-width: 500px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .contact-block { padding: 1.75rem 1.5rem; }
 }
 
-/* ── ANIMATIONS ── */
+/* ── KEYFRAMES ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero, .intro-block, section {
-  animation: fadeUp .55s ease both;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-section:nth-child(2)  { animation-delay: .05s; }
-section:nth-child(3)  { animation-delay: .10s; }
-section:nth-child(4)  { animation-delay: .15s; }
-section:nth-child(5)  { animation-delay: .20s; }
-section:nth-child(6)  { animation-delay: .25s; }
-section:nth-child(7)  { animation-delay: .30s; }
-section:nth-child(8)  { animation-delay: .35s; }
-section:nth-child(9)  { animation-delay: .40s; }
-section:nth-child(10) { animation-delay: .45s; }
 ```
 
   </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
+<!-- NAV -->
 
 <header>
-  <div class="header-inner">
-    <a class="logo" href="#">STR<span>DE</span></a>
-    <span class="header-label">Legal · Privacy</span>
+  <div class="nav-inner">
+    <a class="logo" href="#">STRDE</a>
+    <span class="nav-pill">Privacy Policy</span>
   </div>
 </header>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 
 <div class="hero">
-  <div>
-    <p class="hero-eyebrow">Legal Documentation</p>
-    <h1>Privacy Policy</h1>
-  </div>
-  <div class="hero-meta">
-    <p><strong>Effective Date:</strong> May 9, 2026</p>
-    <p><strong>Last Updated:</strong> May 9, 2026</p>
-    <p><strong>Version:</strong> 1.0</p>
+  <p class="hero-eyebrow">Legal &amp; Privacy</p>
+  <h1 class="hero-title">Privacy Policy</h1>
+  <div class="hero-chips">
+    <span class="chip"><b>Effective</b> May 9, 2026</span>
+    <span class="chip"><b>Updated</b> May 9, 2026</span>
+    <span class="chip"><b>Version</b> 1.0</span>
   </div>
 </div>
 
-<!-- ── MAIN ── -->
+<!-- SHELL -->
 
-<div class="wrapper">
+<div class="shell">
 
-  <!-- Sidebar TOC -->
-
-  <nav class="toc" aria-label="Table of Contents">
-    <p class="toc-label">Contents</p>
-    <ol>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#information-collected">Information We Collect</a></li>
-      <li><a href="#google-services">Google API &amp; Services</a></li>
-      <li><a href="#on-device">On-Device Data Storage</a></li>
-      <li><a href="#use-of-info">How We Use Your Information</a></li>
-      <li><a href="#sharing">Data Sharing &amp; Disclosure</a></li>
-      <li><a href="#security">Data Security</a></li>
-      <li><a href="#retention">Data Retention</a></li>
-      <li><a href="#your-rights">Your Rights &amp; Choices</a></li>
-      <li><a href="#children">Children's Privacy</a></li>
-      <li><a href="#changes">Changes to This Policy</a></li>
-      <li><a href="#contact">Contact Us</a></li>
+  <aside class="toc">
+    <p class="toc-label">On this page</p>
+    <ol class="toc-list">
+      <li><a href="#overview"><span class="toc-num">01</span> Overview</a></li>
+      <li><a href="#information-collected"><span class="toc-num">02</span> Information We Collect</a></li>
+      <li><a href="#google-services"><span class="toc-num">03</span> Google API &amp; Services</a></li>
+      <li><a href="#on-device"><span class="toc-num">04</span> On-Device Storage</a></li>
+      <li><a href="#use-of-info"><span class="toc-num">05</span> How We Use Data</a></li>
+      <li><a href="#sharing"><span class="toc-num">06</span> Sharing &amp; Disclosure</a></li>
+      <li><a href="#security"><span class="toc-num">07</span> Data Security</a></li>
+      <li><a href="#retention"><span class="toc-num">08</span> Data Retention</a></li>
+      <li><a href="#your-rights"><span class="toc-num">09</span> Your Rights</a></li>
+      <li><a href="#children"><span class="toc-num">10</span> Children's Privacy</a></li>
+      <li><a href="#changes"><span class="toc-num">11</span> Policy Changes</a></li>
+      <li><a href="#contact"><span class="toc-num">12</span> Contact Us</a></li>
     </ol>
-  </nav>
-
-  <!-- Content -->
+  </aside>
 
   <main class="content">
 
 ```
-<div class="intro-block">
-  <p>
-    This Privacy Policy describes how <strong>STRDE</strong> ("we," "our," or "us") collects, uses, stores, and protects information when you use our mobile application (the "App"). We are committed to handling your personal data with transparency and in full compliance with applicable privacy laws, including the General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and other applicable regional regulations. By using STRDE, you agree to the practices described in this Policy.
-  </p>
+<div class="intro-banner">
+  <p>This Privacy Policy describes how <strong>STRDE</strong> ("we," "our," or "us") collects, uses, stores, and protects information when you use our mobile application (the "App"). We are committed to handling your data with full transparency and in compliance with applicable privacy laws — including the GDPR, CCPA, and other regional regulations. By using STRDE, you agree to the practices described here.</p>
 </div>
 
-<!-- 1 -->
 <section id="overview">
-  <div class="section-header">
-    <span class="section-num">01</span>
-    <h2>Overview</h2>
-  </div>
-  <p>STRDE is a productivity application designed to help users manage their schedules, activities, and goals. We believe in a privacy-first approach: wherever possible, your data stays on your device. We only process or transmit data when strictly necessary to provide core features — such as integration with Google's services — and we never sell your personal information to third parties.</p>
+  <div class="sec-header"><span class="sec-num">01</span><h2>Overview</h2></div>
+  <p>STRDE is a productivity application designed to help users manage their schedules, activities, and goals. We operate with a privacy-first philosophy: wherever possible, your data stays on your device. We only process or transmit data when strictly necessary to provide core features — such as Google service integration — and we never sell your personal information to third parties.</p>
   <p>This Policy applies to all users of the STRDE mobile application across all supported platforms and versions.</p>
 </section>
 
-<!-- 2 -->
 <section id="information-collected">
-  <div class="section-header">
-    <span class="section-num">02</span>
-    <h2>Information We Collect</h2>
-  </div>
-  <p>We collect only the minimum information necessary to provide and improve our services. The categories of information we may collect include:</p>
-
+  <div class="sec-header"><span class="sec-num">02</span><h2>Information We Collect</h2></div>
+  <p>We collect only the minimum information necessary to provide and improve our services.</p>
   <h3>Information You Provide</h3>
-  <ul class="policy-list">
-    <li>Account credentials and profile information (such as your name and email address) obtained through Google Sign-In</li>
+  <ul class="plist">
+    <li>Account credentials and profile information (name, email address) obtained through Google Sign-In</li>
     <li>Content you create within the App, including schedules, entries, and notes</li>
     <li>Preferences and settings you configure within the App</li>
   </ul>
-
   <h3>Information Collected Automatically</h3>
   <div class="card-grid">
     <div class="card">
-      <div class="card-icon">📱</div>
+      <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <div class="card-title">Device Info</div>
-      <div class="card-desc">Device model, operating system version, and unique device identifiers for diagnostic purposes.</div>
+      <div class="card-desc">Device model, OS version, and identifiers used for diagnostic purposes.</div>
     </div>
     <div class="card">
-      <div class="card-icon">⚙️</div>
+      <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
       <div class="card-title">App Diagnostics</div>
-      <div class="card-desc">Crash logs and error reports to help us identify and fix technical issues.</div>
+      <div class="card-desc">Crash logs and error reports to identify and resolve technical issues.</div>
     </div>
     <div class="card">
-      <div class="card-icon">📊</div>
+      <div class="card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
       <div class="card-title">Usage Patterns</div>
-      <div class="card-desc">Aggregated, anonymized feature usage data to improve the App experience over time.</div>
+      <div class="card-desc">Aggregated, anonymized feature usage data to improve the App over time.</div>
     </div>
     <div class="card">
-      <div class="card-icon">🌐</div>
+      <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
       <div class="card-title">Network Info</div>
-      <div class="card-desc">General connectivity status necessary to sync with integrated Google services.</div>
+      <div class="card-desc">General connectivity status to sync with integrated Google services.</div>
     </div>
   </div>
-
-  <div class="highlight-box">
-    <p><strong>Important:</strong> All content you create within the App — including personal entries, schedules, and notes — is stored locally on your device and is <em>never</em> transmitted to our servers unless you explicitly use a feature requiring external sync.</p>
+  <div class="callout">
+    <div class="callout-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+    <p><strong>Important:</strong> All content you create — entries, schedules, notes — is stored locally on your device and is <em>never</em> transmitted to our servers unless you explicitly use a feature requiring external sync.</p>
   </div>
 </section>
 
-<!-- 3 -->
 <section id="google-services">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2>Google API &amp; Services</h2>
-  </div>
+  <div class="sec-header"><span class="sec-num">03</span><h2>Google API &amp; Services</h2></div>
   <p>STRDE integrates with Google APIs to provide authentication and calendar functionality. Our use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-
-  <div class="google-badge">
-    <span class="g-dot g-blue"></span>
-    <span class="g-dot g-red"></span>
-    <span class="g-dot g-yellow"></span>
-    <span class="g-dot g-green"></span>
+  <div class="g-badge">
+    <div class="g-dots"><span class="g-dot"></span><span class="g-dot"></span><span class="g-dot"></span><span class="g-dot"></span></div>
     Powered by Google API Services
   </div>
-
   <h3>Google Sign-In</h3>
-  <p>STRDE uses Google Sign-In to authenticate users. When you sign in with Google, we receive your Google account's basic profile information — typically your name, email address, and profile picture — solely for the purpose of creating and managing your STRDE account. We do not use this information for advertising or share it with unauthorized third parties.</p>
-
+  <p>When you sign in with Google, we receive your basic profile information — typically your name, email address, and profile picture — solely for the purpose of creating and managing your STRDE account. This information is not used for advertising or shared with unauthorized third parties.</p>
   <h3>Google Calendar</h3>
-  <p>STRDE may request access to your Google Calendar to enable scheduling features within the App. Specifically:</p>
-  <ul class="policy-list">
-    <li>We request only the minimum permissions necessary to read and write calendar events relevant to STRDE's core functionality</li>
-    <li>We do not access, read, or store calendar data beyond what is required for the features you actively use</li>
-    <li>Calendar data obtained through Google APIs is used solely to provide the calendar integration feature and is not shared with third parties</li>
-    <li>You may revoke STRDE's access to your Google Calendar at any time via your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a> page</li>
+  <p>STRDE may request access to your Google Calendar to enable scheduling features. Specifically:</p>
+  <ul class="plist">
+    <li>We request only the minimum permissions necessary to read and write calendar events for STRDE's core functionality</li>
+    <li>We do not access or store calendar data beyond what is required for the features you actively use</li>
+    <li>Calendar data obtained through Google APIs is not shared with third parties</li>
+    <li>You may revoke STRDE's access at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">Google Account Permissions</a></li>
   </ul>
-
   <h3>Scope of Google API Access</h3>
-  <p>STRDE does not use Google user data to develop, improve, or train generalized AI or machine learning models. Data obtained through Google APIs is used exclusively to operate the features you have enabled and is not transferred to third parties except as necessary to provide those features (e.g., display within the App interface).</p>
+  <p>STRDE does not use Google user data to develop, improve, or train AI or machine learning models. Data obtained through Google APIs is used exclusively to operate the features you have enabled and is not transferred to third parties except as necessary to provide those features.</p>
 </section>
 
-<!-- 4 -->
 <section id="on-device">
-  <div class="section-header">
-    <span class="section-num">04</span>
-    <h2>On-Device Data Storage</h2>
-  </div>
-  <p>STRDE is architected with a local-first philosophy. The vast majority of data generated by your use of the App resides exclusively on your device:</p>
-  <ul class="policy-list">
-    <li>Personal entries, goals, activity logs, and other user-created content are stored locally in the App's sandboxed storage environment</li>
-    <li>Local data is not transmitted to STRDE's servers or any external service unless you initiate a specific sync or export action</li>
-    <li>Your local data is protected by your device's native security mechanisms, including device encryption where enabled by your operating system</li>
-    <li>Uninstalling the App will permanently delete locally stored App data from your device</li>
+  <div class="sec-header"><span class="sec-num">04</span><h2>On-Device Data Storage</h2></div>
+  <p>STRDE is built with a local-first architecture. The vast majority of data generated by your use of the App resides exclusively on your device:</p>
+  <ul class="plist">
+    <li>Personal entries, goals, and activity logs are stored locally in the App's sandboxed storage environment</li>
+    <li>Local data is not transmitted to STRDE's servers unless you initiate a specific sync or export action</li>
+    <li>Your data is protected by your device's native security mechanisms, including OS-level encryption</li>
+    <li>Uninstalling the App will permanently delete all locally stored App data from your device</li>
   </ul>
-  <div class="highlight-box">
-    <p>We strongly recommend keeping your device's operating system up to date and enabling device-level encryption (such as a passcode, Face ID, or fingerprint lock) to protect locally stored data from unauthorized access.</p>
+  <div class="callout">
+    <div class="callout-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+    <p>We strongly recommend keeping your device OS up to date and enabling device-level encryption — such as a passcode, Face ID, or fingerprint lock — to protect locally stored data from unauthorized access.</p>
   </div>
 </section>
 
-<!-- 5 -->
 <section id="use-of-info">
-  <div class="section-header">
-    <span class="section-num">05</span>
-    <h2>How We Use Your Information</h2>
-  </div>
+  <div class="sec-header"><span class="sec-num">05</span><h2>How We Use Your Information</h2></div>
   <p>We use the information we collect for the following purposes:</p>
-  <ul class="policy-list">
-    <li><strong>To provide and maintain the App:</strong> Core functionality, authentication, and feature delivery</li>
-    <li><strong>To personalize your experience:</strong> Applying your preferences and settings across sessions</li>
-    <li><strong>To improve the App:</strong> Analyzing anonymized, aggregated usage patterns to identify improvements</li>
-    <li><strong>To ensure technical stability:</strong> Diagnosing crashes, errors, and performance issues</li>
-    <li><strong>To communicate with you:</strong> Sending important updates about the App or changes to this Policy (where you have opted in)</li>
-    <li><strong>To comply with legal obligations:</strong> Meeting applicable legal requirements and enforcing our Terms of Service</li>
+  <ul class="plist">
+    <li><strong>Provide and maintain the App</strong> — Core functionality, authentication, and feature delivery</li>
+    <li><strong>Personalize your experience</strong> — Applying your preferences and settings across sessions</li>
+    <li><strong>Improve the App</strong> — Analyzing anonymized usage patterns to identify improvements</li>
+    <li><strong>Ensure technical stability</strong> — Diagnosing crashes, errors, and performance issues</li>
+    <li><strong>Communicate with you</strong> — Sending important updates about the App or this Policy, where you have opted in</li>
+    <li><strong>Comply with legal obligations</strong> — Meeting applicable legal requirements and enforcing our Terms of Service</li>
   </ul>
   <p>We do not use your data for targeted advertising, profiling, or sale to data brokers.</p>
 </section>
 
-<!-- 6 -->
 <section id="sharing">
-  <div class="section-header">
-    <span class="section-num">06</span>
-    <h2>Data Sharing &amp; Disclosure</h2>
-  </div>
+  <div class="sec-header"><span class="sec-num">06</span><h2>Data Sharing &amp; Disclosure</h2></div>
   <p>We do not sell, rent, or trade your personal information. We may share limited data only in the following circumstances:</p>
-  <ul class="policy-list">
-    <li><strong>Service Providers:</strong> Trusted third-party vendors who assist us in operating the App (e.g., analytics, crash reporting) under strict contractual data protection obligations</li>
-    <li><strong>Google LLC:</strong> As necessary to facilitate Google Sign-In and Google Calendar integration, governed by Google's own Privacy Policy</li>
-    <li><strong>Legal Requirements:</strong> When required by law, regulation, legal process, or governmental authority</li>
-    <li><strong>Protection of Rights:</strong> To protect the rights, property, or safety of STRDE, our users, or the public where required or permitted by law</li>
-    <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets, provided the acquiring entity agrees to honor this Privacy Policy</li>
+  <ul class="plist">
+    <li><strong>Service Providers</strong> — Trusted vendors who assist in operating the App, under strict contractual data protection obligations</li>
+    <li><strong>Google LLC</strong> — As necessary to facilitate Google Sign-In and Calendar integration, governed by Google's Privacy Policy</li>
+    <li><strong>Legal Requirements</strong> — When required by law, regulation, legal process, or governmental authority</li>
+    <li><strong>Protection of Rights</strong> — To protect the rights, property, or safety of STRDE, our users, or the public</li>
+    <li><strong>Business Transfers</strong> — In connection with a merger or acquisition, provided the acquiring entity honors this Policy</li>
   </ul>
 </section>
 
-<!-- 7 -->
 <section id="security">
-  <div class="section-header">
-    <span class="section-num">07</span>
-    <h2>Data Security</h2>
-  </div>
-  <p>We implement technical and organizational security measures appropriate to the sensitivity of the data we handle. These measures include:</p>
-  <ul class="policy-list">
-    <li>Encrypted data transmission using industry-standard TLS protocols for any data sent between the App and external services</li>
-    <li>Secure token-based authentication for Google API access, with tokens stored in platform-native secure storage (iOS Keychain / Android Keystore)</li>
+  <div class="sec-header"><span class="sec-num">07</span><h2>Data Security</h2></div>
+  <p>We implement technical and organizational security measures appropriate to the sensitivity of the data we handle:</p>
+  <ul class="plist">
+    <li>Encrypted data transmission using industry-standard TLS protocols for any data exchanged with external services</li>
+    <li>Secure token-based authentication for Google API access, stored in platform-native secure storage (iOS Keychain / Android Keystore)</li>
     <li>Access controls limiting employee access to user data to only those with a legitimate operational need</li>
-    <li>Regular security reviews and updates to our practices as threats evolve</li>
+    <li>Regular security reviews and updates to our practices as the threat landscape evolves</li>
   </ul>
-  <p>While we take data security seriously, no system is completely impenetrable. We encourage you to use a strong, unique device passcode and to report any suspected security issues to us promptly at the contact address below.</p>
+  <p>While we take data security seriously, no system is completely impenetrable. We encourage you to use a strong device passcode and to report any suspected security issues to us promptly.</p>
 </section>
 
-<!-- 8 -->
 <section id="retention">
-  <div class="section-header">
-    <span class="section-num">08</span>
-    <h2>Data Retention</h2>
-  </div>
-  <p>We retain personal data only for as long as necessary to fulfill the purposes described in this Policy or as required by applicable law:</p>
-  <ul class="policy-list">
-    <li><strong>On-device data:</strong> Retained until you delete it within the App or uninstall the App</li>
-    <li><strong>Account data (Google Sign-In):</strong> Retained for the duration of your active account; deleted upon account deletion request</li>
-    <li><strong>Crash and diagnostic logs:</strong> Retained for up to 90 days for debugging purposes, then automatically purged</li>
-    <li><strong>Anonymized analytics:</strong> May be retained indefinitely as they cannot be used to identify you</li>
+  <div class="sec-header"><span class="sec-num">08</span><h2>Data Retention</h2></div>
+  <p>We retain personal data only as long as necessary to fulfill the purposes described in this Policy or as required by applicable law:</p>
+  <ul class="plist">
+    <li><strong>On-device data</strong> — Retained until you delete it within the App or uninstall the App</li>
+    <li><strong>Account data (Google Sign-In)</strong> — Retained for the duration of your active account; deleted upon request</li>
+    <li><strong>Crash and diagnostic logs</strong> — Retained for up to 90 days for debugging, then automatically purged</li>
+    <li><strong>Anonymized analytics</strong> — May be retained indefinitely as they cannot be used to identify you</li>
   </ul>
   <p>To request deletion of your account and associated data, please contact us using the information in Section 12.</p>
 </section>
 
-<!-- 9 -->
 <section id="your-rights">
-  <div class="section-header">
-    <span class="section-num">09</span>
-    <h2>Your Rights &amp; Choices</h2>
-  </div>
-  <p>Depending on your location, you may have certain rights regarding your personal information:</p>
-  <ul class="policy-list">
-    <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
-    <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
-    <li><strong>Deletion:</strong> Request deletion of your personal data ("right to be forgotten")</li>
-    <li><strong>Portability:</strong> Request your data in a machine-readable format</li>
-    <li><strong>Objection / Restriction:</strong> Object to or request restriction of certain processing activities</li>
-    <li><strong>Withdraw Consent:</strong> Withdraw consent for data processing activities based on consent</li>
-    <li><strong>Google Permissions:</strong> Revoke STRDE's access to your Google account or Calendar at any time via Google Account Settings</li>
+  <div class="sec-header"><span class="sec-num">09</span><h2>Your Rights &amp; Choices</h2></div>
+  <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+  <ul class="plist">
+    <li><strong>Access</strong> — Request a copy of the personal data we hold about you</li>
+    <li><strong>Correction</strong> — Request correction of inaccurate or incomplete data</li>
+    <li><strong>Deletion</strong> — Request deletion of your personal data ("right to be forgotten")</li>
+    <li><strong>Portability</strong> — Request your data in a machine-readable format</li>
+    <li><strong>Objection / Restriction</strong> — Object to or request restriction of certain processing activities</li>
+    <li><strong>Withdraw Consent</strong> — Withdraw consent for data processing activities at any time</li>
+    <li><strong>Google Permissions</strong> — Revoke STRDE's Google access at any time via Google Account Settings</li>
   </ul>
-  <p>California residents have additional rights under the CCPA, including the right to know what personal information is collected, the right to opt out of sale (we do not sell data), and the right to non-discrimination for exercising these rights.</p>
+  <p>California residents have additional rights under the CCPA — including the right to know what information is collected, the right to opt out of sale (we do not sell data), and the right to non-discrimination for exercising these rights.</p>
   <p>To exercise any of these rights, please contact us at the address in Section 12. We will respond within the timeframe required by applicable law.</p>
 </section>
 
-<!-- 10 -->
 <section id="children">
-  <div class="section-header">
-    <span class="section-num">10</span>
-    <h2>Children's Privacy</h2>
-  </div>
+  <div class="sec-header"><span class="sec-num">10</span><h2>Children's Privacy</h2></div>
   <p>STRDE is not directed to children under the age of 13 (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If you believe we have inadvertently collected data from a child, please contact us immediately and we will take prompt steps to delete that information.</p>
 </section>
 
-<!-- 11 -->
 <section id="changes">
-  <div class="section-header">
-    <span class="section-num">11</span>
-    <h2>Changes to This Policy</h2>
-  </div>
-  <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will:</p>
-  <ul class="policy-list">
+  <div class="sec-header"><span class="sec-num">11</span><h2>Changes to This Policy</h2></div>
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, or legal requirements. When we make material changes, we will:</p>
+  <ul class="plist">
     <li>Update the "Last Updated" date at the top of this page</li>
     <li>Notify you through an in-app notification or a prominent notice within the App</li>
     <li>Where required by law, seek your renewed consent</li>
   </ul>
-  <p>Your continued use of STRDE after any changes to this Policy constitutes your acceptance of the revised terms. We encourage you to review this page periodically.</p>
+  <p>Your continued use of STRDE after any changes to this Policy constitutes your acceptance of the revised terms.</p>
 </section>
 
-<!-- Contact -->
-<div class="contact-block" id="contact">
-  <h2>12 — Contact Us</h2>
-  <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:</p>
-  <p>
-    <strong style="color:#fff;">STRDE — Privacy Team</strong><br>
-    Email: <a href="mailto:privacy@strde.app">privacy@strde.app</a>
-  </p>
-  <p style="font-size:.8rem; margin-top:1rem;">We are committed to resolving privacy inquiries promptly and will respond within 30 days of receipt, or as required by applicable law.</p>
-</div>
+<section id="contact" style="margin-bottom:0;">
+  <div class="contact-block">
+    <div class="sec-header">
+      <span class="sec-num">12</span>
+      <h2>Contact Us</h2>
+    </div>
+    <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to our Privacy Team directly.</p>
+    <p>
+      <strong>STRDE — Privacy Team</strong><br>
+      Email: <a href="mailto:questions@jonathanurena.com">questions@jonathanurena.com</a>
+    </p>
+    <p>We are committed to resolving privacy inquiries promptly and will respond within 30 days of receipt, or within the timeframe required by applicable law.</p>
+  </div>
+</section>
 ```
 
   </main>
 </div>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 
 <footer>
-  <div class="footer-inner">
-    <span class="footer-logo">STR<span>DE</span></span>
-    <p>© 2026 STRDE. All rights reserved.</p>
-    <p>This policy was last updated on <strong>May 9, 2026</strong>.</p>
-  </div>
+  <div class="footer-logo">STRDE</div>
+  <div class="footer-copy">© 2026 STRDE. All rights reserved. · <a href="mailto:questions@jonathanurena.com">questions@jonathanurena.com</a></div>
 </footer>
+
+<script>
+  // Scroll-triggered section reveal
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(s => observer.observe(s));
+</script>
 
 </body>
 </html>
