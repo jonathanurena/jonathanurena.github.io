@@ -4,36 +4,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'unsafe-inline';">
-<title>Fiinly — Investor Pitch</title>
+<title>Fiinly</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-–cream: #FAF7F2;
-–ink: #1A1714;
-–warm-brown: #6B4F3A;
-–gold: #C9963A;
-–soft-gold: #E8C97A;
-–muted: #8C7B6E;
-–divider: #E5DDD5;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
 body {
-background: var(–cream);
-color: var(–ink);
+background: #FAF7F2;
+color: #1A1714;
 font-family: ‘DM Sans’, sans-serif;
 font-weight: 300;
 line-height: 1.75;
 overflow-x: hidden;
 }
 
-/* –– HERO –– */
 .hero {
 min-height: 100vh;
 display: flex;
@@ -56,15 +44,15 @@ pointer-events: none;
 }
 
 .hero-eyebrow {
-font-family: ‘DM Sans’, sans-serif;
 font-size: 11px;
 font-weight: 500;
 letter-spacing: 0.25em;
 text-transform: uppercase;
-color: var(–gold);
+color: #C9963A;
 margin-bottom: 28px;
 opacity: 0;
 animation: fadeUp 0.8s ease forwards 0.2s;
+position: relative;
 }
 
 .hero-title {
@@ -73,46 +61,49 @@ font-size: clamp(52px, 9vw, 110px);
 font-weight: 700;
 line-height: 1.0;
 letter-spacing: -0.02em;
-color: var(–ink);
+color: #1A1714;
 margin-bottom: 12px;
 opacity: 0;
 animation: fadeUp 0.9s ease forwards 0.4s;
+position: relative;
 }
 
 .hero-title em {
 font-style: italic;
-color: var(–warm-brown);
+color: #6B4F3A;
 }
 
 .hero-subtitle {
 font-family: ‘Playfair Display’, serif;
 font-size: clamp(16px, 2.5vw, 22px);
 font-style: italic;
-color: var(–muted);
+color: #8C7B6E;
 margin-bottom: 48px;
 opacity: 0;
 animation: fadeUp 0.9s ease forwards 0.6s;
+position: relative;
 }
 
 .hero-divider {
 width: 60px;
 height: 1px;
-background: var(–gold);
+background: #C9963A;
 margin: 0 auto 48px;
 opacity: 0;
 animation: fadeUp 0.8s ease forwards 0.8s;
+position: relative;
 }
 
 .hero-opening {
 max-width: 600px;
 font-size: clamp(17px, 2vw, 20px);
-color: var(–warm-brown);
+color: #6B4F3A;
 font-weight: 400;
 opacity: 0;
 animation: fadeUp 0.9s ease forwards 1s;
+position: relative;
 }
 
-/* –– SECTIONS –– */
 .section {
 max-width: 820px;
 margin: 0 auto;
@@ -132,7 +123,7 @@ font-size: 10px;
 font-weight: 500;
 letter-spacing: 0.3em;
 text-transform: uppercase;
-color: var(–gold);
+color: #C9963A;
 margin-bottom: 20px;
 }
 
@@ -142,12 +133,12 @@ font-size: clamp(32px, 5vw, 52px);
 line-height: 1.15;
 font-weight: 700;
 margin-bottom: 28px;
-color: var(–ink);
+color: #1A1714;
 }
 
 .section-headline em {
 font-style: italic;
-color: var(–warm-brown);
+color: #6B4F3A;
 }
 
 .section-body {
@@ -160,7 +151,6 @@ line-height: 1.85;
 margin-top: 20px;
 }
 
-/* –– PULL QUOTE –– */
 .pull-quote {
 max-width: 820px;
 margin: 0 auto;
@@ -180,15 +170,14 @@ font-family: ‘Playfair Display’, serif;
 font-size: clamp(24px, 4vw, 40px);
 font-style: italic;
 line-height: 1.35;
-color: var(–warm-brown);
-border-left: 3px solid var(–gold);
+color: #6B4F3A;
+border-left: 3px solid #C9963A;
 padding-left: 32px;
 }
 
-/* –– FULL BLEED BAND –– */
 .band {
-background: var(–ink);
-color: var(–cream);
+background: #1A1714;
+color: #FAF7F2;
 padding: 80px 32px;
 opacity: 0;
 transform: translateY(30px);
@@ -205,11 +194,10 @@ max-width: 820px;
 margin: 0 auto;
 }
 
-.band .section-label { color: var(–soft-gold); }
-.band .section-headline { color: var(–cream); }
+.band .section-label { color: #E8C97A; }
+.band .section-headline { color: #FAF7F2; }
 .band .section-body { color: #C4B8AF; }
 
-/* –– THREE PILLARS –– */
 .pillars {
 max-width: 820px;
 margin: 0 auto;
@@ -232,7 +220,7 @@ margin-top: 48px;
 }
 
 .pillar {
-border-top: 2px solid var(–gold);
+border-top: 2px solid #C9963A;
 padding-top: 24px;
 }
 
@@ -240,7 +228,7 @@ padding-top: 24px;
 font-family: ‘Playfair Display’, serif;
 font-size: 48px;
 font-weight: 700;
-color: var(–divider);
+color: #E5DDD5;
 line-height: 1;
 margin-bottom: 12px;
 }
@@ -249,17 +237,16 @@ margin-bottom: 12px;
 font-family: ‘Playfair Display’, serif;
 font-size: 22px;
 font-weight: 700;
-color: var(–ink);
+color: #1A1714;
 margin-bottom: 10px;
 }
 
 .pillar-text {
 font-size: 15px;
-color: var(–muted);
+color: #8C7B6E;
 line-height: 1.7;
 }
 
-/* –– CLOSE –– */
 .close-section {
 text-align: center;
 padding: 100px 32px 120px;
@@ -278,29 +265,28 @@ font-family: ‘Playfair Display’, serif;
 font-size: clamp(48px, 8vw, 90px);
 font-weight: 700;
 font-style: italic;
-color: var(–warm-brown);
+color: #6B4F3A;
 margin-bottom: 20px;
 }
 
 .close-section .tagline {
 font-size: clamp(18px, 2.5vw, 24px);
-color: var(–muted);
+color: #8C7B6E;
 font-style: italic;
 font-family: ‘Playfair Display’, serif;
 }
 
-/* –– DIVIDER LINE –– */
 .hr {
 max-width: 820px;
 margin: 0 auto;
 padding: 0 32px;
 }
+
 .hr hr {
 border: none;
-border-top: 1px solid var(–divider);
+border-top: 1px solid #E5DDD5;
 }
 
-/* –– ANIMATIONS –– */
 @keyframes fadeUp {
 from { opacity: 0; transform: translateY(24px); }
 to   { opacity: 1; transform: translateY(0); }
@@ -310,23 +296,19 @@ to   { opacity: 1; transform: translateY(0); }
 </head>
 <body>
 
-<!-- HERO -->
-
 <section class="hero">
   <p class="hero-eyebrow">An Invitation to Collaborate on Something Real</p>
   <h1 class="hero-title"><em>Fiinly</em></h1>
-  <p class="hero-subtitle">pronounced "Finally" &nbsp;·&nbsp; Finance + Finally</p>
+  <p class="hero-subtitle">pronounced "Finally" &nbsp;&middot;&nbsp; Finance + Finally</p>
   <div class="hero-divider"></div>
   <p class="hero-opening">Someone out there checked their bank account this morning and felt their stomach drop. This is for them.</p>
 </section>
-
-<!-- SECTION 1: THE HUMAN PROBLEM -->
 
 <section class="section">
   <p class="section-label">The Problem</p>
   <h2 class="section-headline">Debt doesn't start with <em>recklessness.</em><br>It starts with life.</h2>
   <div class="section-body">
-    <p>A medical bill arrives. A job disappears. A baby comes before the savings do. Debt doesn't announce itself. It just shows up — and quietly takes over.</p>
+    <p>A medical bill arrives. A job disappears. A baby comes before the savings do. Debt doesn't announce itself. It just shows up and quietly takes over.</p>
     <p>Most people aren't careless. They're just carrying more than anyone sees. And the tools that promised to help? They either overwhelm with complexity people don't trust, or quietly turn around and sell the very habits they were hired to fix.</p>
     <p>The people who need the most help are being let down by the very thing holding their hand.</p>
   </div>
@@ -334,41 +316,33 @@ to   { opacity: 1; transform: translateY(0); }
 
 <div class="hr"><hr></div>
 
-<!-- PULL QUOTE -->
-
 <div class="pull-quote">
   <blockquote>"What if someone finally built a tool that was completely, unconditionally on the user's side?"</blockquote>
 </div>
 
 <div class="hr"><hr></div>
 
-<!-- SECTION 2: THE IDEA -->
-
 <section class="section">
   <p class="section-label">The Idea</p>
   <h2 class="section-headline">We built <em>Fiinly</em> for the person who's tired of being afraid to look at their bank account.</h2>
   <div class="section-body">
     <p>Your data stays with you. We never see it. We never sell it. We never profit from the cycle we're helping you break.</p>
-    <p>Ten seconds to log a purchase. Five minutes to see your whole picture. And for the first time — a real date. The exact day your debt is gone, if you follow your plan. Not a guess. Not a projection. A date you can circle. Count down to. Hold onto.</p>
+    <p>Ten seconds to log a purchase. Five minutes to see your whole picture. And for the first time, a real date. The exact day your debt is gone, if you follow your plan. Not a guess. Not a projection. A date you can circle. Count down to. Hold onto.</p>
     <p>Debt stops feeling like weather. It starts feeling like something you can beat.</p>
   </div>
 </section>
-
-<!-- BAND: PRIVACY -->
 
 <div class="band">
   <div class="band-inner">
     <p class="section-label">Our Promise</p>
     <h2 class="section-headline">Privacy isn't a feature.<br>It's the <em>foundation.</em></h2>
     <div class="section-body">
-      <p>Most financial apps exist inside a larger machine. Your spending habits have value — to advertisers, to partners, to people you'll never meet. That's not a bug. It's the model. And it works against you.</p>
+      <p>Most financial apps exist inside a larger machine. Your spending habits have value to advertisers, to partners, to people you'll never meet. That's not a bug. It's the model. And it works against you.</p>
       <p>Fiinly is different. We earn when you pay for the app. Nothing more. Your data never leaves your device. We don't know what you spend. We don't want to. The moment we profit from your habits, we stop being on your side.</p>
       <p>We'd rather be the most trusted tool in your pocket than the most profitable one in ours.</p>
     </div>
   </div>
 </div>
-
-<!-- PILLARS -->
 
 <div class="pillars">
   <p class="section-label">What Fiinly Does</p>
@@ -382,45 +356,39 @@ to   { opacity: 1; transform: translateY(0); }
     <div class="pillar">
       <div class="pillar-number">02</div>
       <div class="pillar-title">Stay out of debt</div>
-      <p class="pillar-text">Paying it off is the beginning. The same system stays with you — quietly reinforcing the habits that keep you free.</p>
+      <p class="pillar-text">Paying it off is the beginning. The same system stays with you, quietly reinforcing the habits that keep you free.</p>
     </div>
     <div class="pillar">
       <div class="pillar-number">03</div>
       <div class="pillar-title">Win when life happens</div>
-      <p class="pillar-text">A raise. A hardship. A car. A home. Fiinly moves with you — so every change in life becomes a chance to stay ahead.</p>
+      <p class="pillar-text">A raise. A hardship. A car. A home. Fiinly moves with you so every change in life becomes a chance to stay ahead.</p>
     </div>
   </div>
 </div>
 
 <div class="hr"><hr></div>
 
-<!-- SECTION: FAMILY -->
-
 <section class="section">
   <p class="section-label">Built for Real Life</p>
   <h2 class="section-headline">Money is rarely just <em>one person's problem.</em></h2>
   <div class="section-body">
-    <p>A couple sits at a kitchen table. One knows what was spent. The other doesn't. That moment — the tension, the silence — it's one of the most common sources of stress in a home.</p>
-    <p>Fiinly integrates with Apple Family Sharing so households move together. Same budget. Same goals. Same page. When a family stops guessing and starts seeing — something quietly changes. The table gets a little quieter. In the best possible way.</p>
+    <p>A couple sits at a kitchen table. One knows what was spent. The other doesn't. That moment, the tension, the silence, it's one of the most common sources of stress in a home.</p>
+    <p>Fiinly integrates with Apple Family Sharing so households move together. Same budget. Same goals. Same page. When a family stops guessing and starts seeing, something quietly changes. The table gets a little quieter. In the best possible way.</p>
   </div>
 </section>
 
 <div class="hr"><hr></div>
 
-<!-- SECTION: WHY THIS MATTERS -->
-
 <section class="section">
   <p class="section-label">Why This Matters</p>
   <h2 class="section-headline">We're not asking you to believe in an app. We're asking you to believe in <em>people.</em></h2>
   <div class="section-body">
-    <p>Financial stress doesn't stay in the spreadsheet. It follows people to bed. It sits with them at dinner. It shows up in arguments that were never really about money — but always were.</p>
-    <p>Fiinly can't fix everything. But it can give someone something they may have never had: a clear, honest picture of where they stand — and a path forward they can actually trust.</p>
+    <p>Financial stress doesn't stay in the spreadsheet. It follows people to bed. It sits with them at dinner. It shows up in arguments that were never really about money, but always were.</p>
+    <p>Fiinly can't fix everything. But it can give someone something they may have never had: a clear, honest picture of where they stand and a path forward they can actually trust.</p>
     <p>Not someday. Now. On their terms. On their device. In their hands.</p>
     <p>We believe technology can be genuinely, unconditionally good for people. We're building it. And we'd love for you to help shape it with us.</p>
   </div>
 </section>
-
-<!-- CLOSE -->
 
 <div class="close-section">
   <div class="brand">Fiinly.</div>
