@@ -246,6 +246,46 @@ body {
   line-height: 1.7;
 }
 
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.price-card {
+  border: 1px solid #E5DDD5;
+  padding: 40px;
+  text-align: center;
+  background: white;
+}
+
+.price-card.featured {
+  border-color: #C9963A;
+  background: #FAF7F2;
+}
+
+.price-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.price-card .cost {
+  font-size: 32px;
+  font-weight: 500;
+  color: #1A1714;
+  margin-bottom: 8px;
+}
+
+.price-card .trial {
+  font-size: 13px;
+  color: #C9963A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
 .close-section {
   text-align: center;
   padding: 100px 32px 120px;
@@ -323,13 +363,13 @@ body {
 <body>
 
 <div class="lang-bar">
-  <a class="lang-btn" href="es.html">Ver en Espa&#241;ol</a>
+  <a class="lang-btn" href="es.html">Ver en Español</a>
 </div>
 
 <section class="hero">
   <p class="hero-eyebrow">An Invitation to Collaborate on Something Real</p>
   <h1 class="hero-title"><em>Fiinly</em></h1>
-  <p class="hero-subtitle">pronounced "Finally" &nbsp;&middot;&nbsp; Finance + Finally</p>
+  <p class="hero-subtitle">pronounced "Finally"  ·  Finance + Finally</p>
   <div class="hero-divider"></div>
   <p class="hero-opening">Someone out there checked their bank account this morning and felt their stomach drop. This is for them.</p>
 </section>
@@ -357,7 +397,8 @@ body {
   <h2 class="section-headline">We built <em>Fiinly</em> for the person who's tired of being afraid to look at their bank account.</h2>
   <div class="section-body">
     <p>Your data stays with you. We never see it. We never sell it. We never profit from the cycle we're helping you break.</p>
-    <p>Ten seconds to log a purchase. Five minutes to see your whole picture. A beautiful dashboard shows you everything at once — where your money goes, what you owe, and how close you are to free. Smart reminders tell you when a bill is coming before it becomes a problem. No surprises. No late fees. No shame.</p>
+    <p>Instead of cold, automated syncing that leaves you disconnected, Fiinly encourages a ten-second mindful log of your purchases. To make this easy, our <strong>Onboard AI</strong> works in the background—it listens when you speak or type, categorizing your life instantly so you don't have to navigate a spreadsheet.</p>
+    <p>Five minutes to see your whole picture. A beautiful dashboard shows you everything at once — where your money goes, what you owe, and how close you are to free. Smart reminders tell you when a bill is coming before it becomes a problem. No surprises. No late fees. No shame.</p>
     <p>And for the first time, a real date. The exact day your debt is gone, if you follow your plan. Not a guess. Not a projection. A date you can circle. Count down to. Hold onto.</p>
     <p>Debt stops feeling like weather. It starts feeling like something you can beat.</p>
   </div>
@@ -369,7 +410,7 @@ body {
     <h2 class="section-headline">Privacy isn't a feature.<br>It's the <em>foundation.</em></h2>
     <div class="section-body">
       <p>Most financial apps exist inside a larger machine. Your spending habits have value to advertisers, to partners, to people you'll never meet. That's not a bug. It's the model. And it works against you.</p>
-      <p>Fiinly is different. We earn when you pay for the app. Nothing more. Your data never leaves your device. We don't know what you spend. We don't want to. The moment we profit from your habits, we stop being on your side.</p>
+      <p>Fiinly is different. We earn when you pay for the app. Nothing more. Your data never leaves your device—even our AI processes your entries locally. We don't know what you spend. We don't want to. The moment we profit from your habits, we stop being on your side.</p>
       <p>We'd rather be the most trusted tool in your pocket than the most profitable one in ours.</p>
     </div>
   </div>
@@ -382,12 +423,12 @@ body {
     <div class="pillar">
       <div class="pillar-number">01</div>
       <div class="pillar-title">Get out of debt</div>
-      <p class="pillar-text">A real plan. A real date. Smart payoff strategies like the debt waterfall method work in the background, prioritizing what costs you most. The moment you see your finish line, something shifts. Debt becomes a distance, not a permanent condition.</p>
+      <p class="pillar-text">A real plan. A real date. You choose the path—whether it's the <strong>Snowball Method</strong> for those early motivational wins or the <strong>Waterfall Method</strong> to kill high-interest debt first. The moment you see your finish line, something shifts. Debt becomes a distance, not a permanent condition.</p>
     </div>
     <div class="pillar">
       <div class="pillar-number">02</div>
       <div class="pillar-title">Stay out of debt</div>
-      <p class="pillar-text">Paying it off is the beginning. Spending insights, customizable budget categories, and gentle nudges keep you aligned long after the last payment. The same system stays with you, quietly reinforcing the habits that keep you free.</p>
+      <p class="pillar-text">Paying it off is the beginning. Spending insights, customizable budget categories, and gentle AI-driven nudges keep you aligned long after the last payment. The same system stays with you, quietly reinforcing the habits that keep you free.</p>
     </div>
     <div class="pillar">
       <div class="pillar-number">03</div>
@@ -405,6 +446,21 @@ body {
   <div class="section-body">
     <p>A couple sits at a kitchen table. One knows what was spent. The other doesn't. That moment, the tension, the silence, it's one of the most common sources of stress in a home.</p>
     <p>Fiinly integrates with Apple Family Sharing so households move together. Same budget. Same goals. Same page. When a family stops guessing and starts seeing, something quietly changes. The table gets a little quieter. In the best possible way.</p>
+    
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Individual</h3>
+        <p class="cost">$9.99 / mo</p>
+        <p class="trial">1 Week Free Trial</p>
+        <p class="pillar-text">Full access to AI-assisted entry, debt payoff strategies, and complete privacy.</p>
+      </div>
+      <div class="price-card featured">
+        <h3>Family</h3>
+        <p class="cost">$12.99 / mo</p>
+        <p class="trial">1 Week Free Trial</p>
+        <p class="pillar-text">Everything in Individual, plus shared profiles so you can stay on the same page, together.</p>
+      </div>
+    </div>
   </div>
 </section>
 
