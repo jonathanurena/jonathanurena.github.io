@@ -318,6 +318,9 @@ body {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .close-section.visible {
@@ -339,6 +342,7 @@ body {
   color: #8C7B6E;
   font-style: italic;
   font-family: 'Playfair Display', serif;
+  margin-bottom: 40px;
 }
 
 .hr {
@@ -381,6 +385,29 @@ body {
 }
 
 .lang-btn:hover {
+  background: #C9963A;
+  color: #FAF7F2;
+}
+
+/* Waitlist Button specific styles */
+.waitlist-btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6B4F3A;
+  border: 1px solid #C9963A;
+  padding: 16px 32px;
+  text-decoration: none;
+  background: white;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 50px; /* Rounded pill shape */
+  margin-bottom: 40px;
+}
+
+.waitlist-btn:hover {
   background: #C9963A;
   color: #FAF7F2;
 }
@@ -542,6 +569,14 @@ footer {
 <div class="close-section">
   <div class="brand">Fiinly.</div>
   <p class="tagline">Finally, Debt-Free.</p>
+  
+  <a href="join-waitlist.html" class="waitlist-btn">Join the Waitlist</a>
+
+  <div class="scroll-indicator" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="position: static; transform: none; animation: bounce 2s infinite;">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+      <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 </div>
 
 <footer>
