@@ -103,6 +103,32 @@ body {
   position: relative;
 }
 
+/* Scroll Arrow Styles */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 1.4s, bounce 2s infinite 2.3s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  stroke: #C9963A;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
 .section {
   max-width: 820px;
   margin: 0 auto;
@@ -367,11 +393,17 @@ body {
 </div>
 
 <section class="hero">
-  <p class="hero-eyebrow">The everyone app</p>
+  <p class="hero-eyebrow">An Invitation to Collaborate on Something Real</p>
   <h1 class="hero-title"><em>Fiinly</em></h1>
-  <p class="hero-subtitle">Finally. Dept-free.</p>
+  <p class="hero-subtitle">Finally, </p>
   <div class="hero-divider"></div>
   <p class="hero-opening">Someone out there checked their bank account this morning and felt their stomach drop. This is for them.</p>
+  
+  <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 </section>
 
 <section class="section">
@@ -468,17 +500,18 @@ body {
 
 <section class="section">
   <p class="section-label">Why This Matters</p>
-  <h2 class="section-headline">We're not asking you to believe this app will make you become debt-free instantly. We're asking you to believe <em>that you can be dept-free.</em></h2>
+  <h2 class="section-headline">We're not asking you to believe in an app. We're asking you to believe in <em>people.</em></h2>
   <div class="section-body">
-    <p>Financial stress doesn't stay in the spreadsheet. It follows you to bed. It sits your family at dinner. It shows up in arguments that were never really about money, but always were.</p>
-    <p>Fiinly can't fix everything. But it can give you the tools you may of never had: a clear, honest picture of where you stand and a path forward you can actually trust.</p>
-    <p>We believe technology can be genuinely, unconditionally good for people. We're building it. And we'd love for you to give Fiinly a chance.</p>
+    <p>Financial stress doesn't stay in the spreadsheet. It follows people to bed. It sits with them at dinner. It shows up in arguments that were never really about money, but always were.</p>
+    <p>Fiinly can't fix everything. But it can give someone something they may have never had: a clear, honest picture of where they stand and a path forward they can actually trust.</p>
+    <p>Not someday. Now. On their terms. On their device. In their hands.</p>
+    <p>We believe technology can be genuinely, unconditionally good for people. We're building it. And we'd love for you to help shape it with us.</p>
   </div>
 </section>
 
 <div class="close-section">
   <div class="brand">Fiinly.</div>
-  <p class="tagline">Finally. Dept-free.</p>
+  <p class="tagline">Fiinly be debt free.</p>
 </div>
 
 <script>
