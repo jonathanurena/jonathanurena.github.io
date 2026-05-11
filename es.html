@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiinly &mdash; Espa&ntilde;ol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #FAF7F2;
+  color: #1A1714;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+.lang-bar {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 100;
+}
+
+.lang-btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6B4F3A;
+  border: 1px solid #C9963A;
+  padding: 10px 20px;
+  text-decoration: none;
+  background: rgba(250, 247, 242, 0.9);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: #C9963A;
+  color: #FAF7F2;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 40%, #EDD9B8 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C9963A;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+  position: relative;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 9vw, 110px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #1A1714;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.4s;
+  position: relative;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #6B4F3A;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-style: italic;
+  color: #8C7B6E;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.6s;
+  position: relative;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: #C9963A;
+  margin: 0 auto 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.8s;
+  position: relative;
+}
+
+.hero-opening {
+  max-width: 600px;
+  font-size: clamp(17px, 2vw, 20px);
+  color: #6B4F3A;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 1s;
+  position: relative;
+}
+
+.section {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9963A;
+  margin-bottom: 20px;
+}
+
+.section-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #1A1714;
+}
+
+.section-headline em {
+  font-style: italic;
+  color: #6B4F3A;
+}
+
+.section-body {
+  font-size: clamp(16px, 1.8vw, 18px);
+  color: #4A3F38;
+  line-height: 1.85;
+}
+
+.section-body p + p {
+  margin-top: 20px;
+}
+
+.pull-quote {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.pull-quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pull-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 40px);
+  font-style: italic;
+  line-height: 1.35;
+  color: #6B4F3A;
+  border-left: 3px solid #C9963A;
+  padding-left: 32px;
+}
+
+.band {
+  background: #1A1714;
+  color: #FAF7F2;
+  padding: 80px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.band.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.band-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.band .section-label { color: #E8C97A; }
+.band .section-headline { color: #FAF7F2; }
+.band .section-body { color: #C4B8AF; }
+
+.pillars {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.pillars.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.pillar {
+  border-top: 2px solid #C9963A;
+  padding-top: 24px;
+}
+
+.pillar-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #E5DDD5;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A1714;
+  margin-bottom: 10px;
+}
+
+.pillar-text {
+  font-size: 15px;
+  color: #8C7B6E;
+  line-height: 1.7;
+}
+
+.close-section {
+  text-align: center;
+  padding: 100px 32px 120px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.close-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.close-section .brand {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 90px);
+  font-weight: 700;
+  font-style: italic;
+  color: #6B4F3A;
+  margin-bottom: 20px;
+}
+
+.close-section .tagline {
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: #8C7B6E;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+}
+
+.hr {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.hr hr {
+  border: none;
+  border-top: 1px solid #E5DDD5;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <a class="lang-btn" href="index.html">View in English</a>
+</div>
+
+<section class="hero">
+  <p class="hero-eyebrow">Una Invitaci&oacute;n a Colaborar en Algo Real</p>
+  <h1 class="hero-title"><em>Fiinly</em></h1>
+  <p class="hero-subtitle">se pronuncia "Finally" &nbsp;&middot;&nbsp; Finanzas + Finalmente</p>
+  <div class="hero-divider"></div>
+  <p class="hero-opening">Alguien ah&iacute; afuera revis&oacute; su cuenta bancaria esta ma&ntilde;ana y sinti&oacute; que el estomago se le cae. Esto es para ellos.</p>
+</section>
+
+<section class="section">
+  <p class="section-label">El Problema</p>
+  <h2 class="section-headline">La deuda no comienza con <em>irresponsabilidad.</em><br>Comienza con la vida.</h2>
+  <div class="section-body">
+    <p>Llega una factura m&eacute;dica. Desaparece un empleo. Un beb&eacute; llega antes que los ahorros. La deuda no se anuncia. Simplemente aparece y en silencio lo toma todo.</p>
+    <p>La mayor&iacute;a de las personas no son descuidadas. Simplemente cargan m&aacute;s de lo que nadie ve. &iquest;Y las herramientas que prometieron ayudar? O abruman con una complejidad en la que nadie conf&iacute;a, o venden silenciosamente los mismos h&aacute;bitos que se supon&iacute;a deb&iacute;an corregir.</p>
+    <p>Las personas que m&aacute;s necesitan ayuda est&aacute;n siendo falladas por lo mismo que las toma de la mano.</p>
+  </div>
+</section>
+
+<div class="hr"><hr></div>
+
+<div class="pull-quote">
+  <blockquote>&ldquo;&iquest;Y si alguien finalmente construyera una herramienta que estuviera completamente, incondicionalmente del lado del usuario?&rdquo;</blockquote>
+</div>
+
+<div class="hr"><hr></div>
+
+<section class="section">
+  <p class="section-label">La Idea</p>
+  <h2 class="section-headline">Creamos <em>Fiinly</em> para la persona que est&aacute; cansada de tenerle miedo a ver su cuenta bancaria.</h2>
+  <div class="section-body">
+    <p>Tus datos se quedan contigo. Nunca los vemos. Nunca los vendemos. Nunca lucramos del ciclo que te estamos ayudando a romper.</p>
+    <p>Diez segundos para registrar una compra. Cinco minutos para ver tu panorama completo. Un hermoso panel te muestra todo de una vez: a d&oacute;nde va tu dinero, cu&aacute;nto debes y qu&eacute; tan cerca est&aacute;s de ser libre. Recordatorios inteligentes te avisan cuando se acerca una factura antes de que se convierta en un problema. Sin sorpresas. Sin cargos por mora. Sin verg&uuml;enza.</p>
+    <p>Y por primera vez, una fecha real. El d&iacute;a exacto en que tu deuda desaparece, si sigues tu plan. No una suposici&oacute;n. No una proyecci&oacute;n. Una fecha que puedes encerrar en un c&iacute;rculo. Que puedes contar. A la que puedes aferrarte.</p>
+    <p>La deuda deja de sentirse como el clima. Empieza a sentirse como algo que puedes vencer.</p>
+  </div>
+</section>
+
+<div class="band">
+  <div class="band-inner">
+    <p class="section-label">Nuestra Promesa</p>
+    <h2 class="section-headline">La privacidad no es una funci&oacute;n.<br>Es la <em>base.</em></h2>
+    <div class="section-body">
+      <p>La mayor&iacute;a de las aplicaciones financieras existen dentro de una m&aacute;quina m&aacute;s grande. Tus h&aacute;bitos de gasto tienen valor para los anunciantes, los socios, personas que jam&aacute;s conocer&aacute;s. Eso no es un error. Es el modelo. Y trabaja en tu contra.</p>
+      <p>Fiinly es diferente. Ganamos cuando pagas por la aplicaci&oacute;n. Nada m&aacute;s. Tus datos nunca salen de tu dispositivo. No sabemos en qu&eacute; gastas. No queremos saberlo. En el momento en que lucremos de tus h&aacute;bitos, dejamos de estar de tu lado.</p>
+      <p>Preferimos ser la herramienta m&aacute;s confiable en tu bolsillo que la m&aacute;s rentable en el nuestro.</p>
+    </div>
+  </div>
+</div>
+
+<div class="pillars">
+  <p class="section-label">Lo Que Hace Fiinly</p>
+  <h2 class="section-headline">Tres cosas, <em>bien hechas.</em></h2>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-number">01</div>
+      <div class="pillar-title">Sal&iacute;r de la deuda</div>
+      <p class="pillar-text">Un plan real. Una fecha real. Estrategias inteligentes como el m&eacute;todo cascada de deudas trabajan en segundo plano, priorizando lo que m&aacute;s te cuesta. En el momento en que ves tu l&iacute;nea de llegada, algo cambia. La deuda se convierte en una distancia, no en una condici&oacute;n permanente.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">02</div>
+      <div class="pillar-title">Mantenerte libre</div>
+      <p class="pillar-text">Pagar es el comienzo. Perspectivas de gastos, categor&iacute;as de presupuesto personalizables y recordatorios sutiles te mantienen alineado mucho despu&eacute;s del &uacute;ltimo pago. El mismo sistema se queda contigo, reforzando en silencio los h&aacute;bitos que te mantienen libre.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">03</div>
+      <div class="pillar-title">Ganar cuando la vida pasa</div>
+      <p class="pillar-text">Un aumento. Una dificultad. Un auto. Un hogar. Fiinly se adapta instant&aacute;neamente a los cambios de ingreso y te ayuda a reasignar con confianza. Cada cambio en la vida se convierte en una oportunidad para mantenerte adelante, no para quedarte atr&aacute;s.</p>
+    </div>
+  </div>
+</div>
+
+<div class="hr"><hr></div>
+
+<section class="section">
+  <p class="section-label">Hecho para la Vida Real</p>
+  <h2 class="section-headline">El dinero rara vez es el problema de <em>una sola persona.</em></h2>
+  <div class="section-body">
+    <p>Una pareja se sienta en la mesa de la cocina. Uno sabe lo que se gast&oacute;. El otro no. Ese momento, la tensi&oacute;n, el silencio, es una de las fuentes m&aacute;s comunes de estr&eacute;s en un hogar.</p>
+    <p>Fiinly se integra con Apple Family Sharing para que los hogares se muevan juntos. El mismo presupuesto. Las mismas metas. La misma p&aacute;gina. Cuando una familia deja de adivinar y empieza a ver, algo cambia en silencio. La mesa se pone un poco m&aacute;s tranquila. De la mejor manera posible.</p>
+  </div>
+</section>
+
+<div class="hr"><hr></div>
+
+<section class="section">
+  <p class="section-label">Por Qu&eacute; Importa</p>
+  <h2 class="section-headline">No te pedimos que creas en una aplicaci&oacute;n. Te pedimos que creas en <em>las personas.</em></h2>
+  <div class="section-body">
+    <p>El estr&eacute;s financiero no se queda en la hoja de c&aacute;lculo. Sigue a las personas a la cama. Se sienta con ellas en la cena. Aparece en discusiones que nunca fueron realmente sobre el dinero, pero siempre lo fueron.</p>
+    <p>Fiinly no puede arreglarlo todo. Pero puede darle a alguien algo que quiz&aacute;s nunca tuvo: una imagen clara y honesta de d&oacute;nde est&aacute; y un camino hacia adelante en el que realmente puede confiar.</p>
+    <p>No alg&uacute;n d&iacute;a. Ahora. En sus t&eacute;rminos. En su dispositivo. En sus manos.</p>
+    <p>Creemos que la tecnolog&iacute;a puede ser genuina e incondicionalmente buena para las personas. La estamos construyendo. Y nos encantar&iacute;a que nos ayudaras a darle forma.</p>
+  </div>
+</section>
+
+<div class="close-section">
+  <div class="brand">Fiinly.</div>
+  <p class="tagline">Fiinly libre de deudas.</p>
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.section, .pull-quote, .band, .pillars, .close-section').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
