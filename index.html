@@ -566,6 +566,548 @@ footer {
   </div>
 </section>
 
+<div class="close-section">
+  <div class="brand">Fiinly.</div>
+  <p class="tagline">Finally, Debt-Free.</p>
+  
+  <a href="join-waitlist.html" class="waitlist-btn">Join the Waitlist</a>
+
+  <div class="scroll-indicator" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="position: static; transform: none; animation: bounce 2s infinite;">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+      <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="policy&contact.html">Our Privacy Policy</a>
+    <a href="policy&contact.html">Our Terms of Use</a>
+    <a href="policy&contact.html">Contact</a>
+  </div>
+  <div class="footer-copyright">
+    &copy; 2026 Ureña Studios LLC. All rights reserved.<br>
+    Fiinly is a trademark of Ureña Studios LLC.
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.section, .pull-quote, .band, .pillars, .close-section').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>  letter-spacing: -0.02em;
+  color: #1A1714;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.4s;
+  position: relative;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #6B4F3A;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-style: italic;
+  color: #8C7B6E;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.6s;
+  position: relative;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: #C9963A;
+  margin: 0 auto 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 0.8s;
+  position: relative;
+}
+
+.hero-opening {
+  max-width: 600px;
+  font-size: clamp(17px, 2vw, 20px);
+  color: #6B4F3A;
+  font-weight: 400;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 1s;
+  position: relative;
+}
+
+/* Scroll Arrow Styles */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 1.4s, bounce 2s infinite 2.3s;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  stroke: #C9963A;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+.section {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9963A;
+  margin-bottom: 20px;
+}
+
+.section-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: #1A1714;
+}
+
+.section-headline em {
+  font-style: italic;
+  color: #6B4F3A;
+}
+
+.section-body {
+  font-size: clamp(16px, 1.8vw, 18px);
+  color: #4A3F38;
+  line-height: 1.85;
+}
+
+.section-body p + p {
+  margin-top: 20px;
+}
+
+.pull-quote {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.pull-quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pull-quote blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4vw, 40px);
+  font-style: italic;
+  line-height: 1.35;
+  color: #6B4F3A;
+  border-left: 3px solid #C9963A;
+  padding-left: 32px;
+}
+
+.band {
+  background: #1A1714;
+  color: #FAF7F2;
+  padding: 80px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.band.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.band-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.band .section-label { color: #E8C97A; }
+.band .section-headline { color: #FAF7F2; }
+.band .section-body { color: #C4B8AF; }
+
+.pillars {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.pillars.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.pillar {
+  border-top: 2px solid #C9963A;
+  padding-top: 24px;
+}
+
+.pillar-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #E5DDD5;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.pillar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1A1714;
+  margin-bottom: 10px;
+}
+
+.pillar-text {
+  font-size: 15px;
+  color: #8C7B6E;
+  line-height: 1.7;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.price-card {
+  border: 1px solid #E5DDD5;
+  padding: 40px;
+  text-align: center;
+  background: white;
+}
+
+.price-card.featured {
+  border-color: #C9963A;
+  background: #FAF7F2;
+}
+
+.price-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.price-card .cost {
+  font-size: 32px;
+  font-weight: 500;
+  color: #1A1714;
+  margin-bottom: 8px;
+}
+
+.price-card .trial {
+  font-size: 13px;
+  color: #C9963A;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.close-section {
+  text-align: center;
+  padding: 100px 32px 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.close-section .brand {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 90px);
+  font-weight: 700;
+  font-style: italic;
+  color: #6B4F3A;
+  margin-bottom: 20px;
+}
+
+.close-section .tagline {
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: #8C7B6E;
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 40px;
+}
+
+.hr {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.hr hr {
+  border: none;
+  border-top: 1px solid #E5DDD5;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.lang-bar {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 100;
+}
+
+.lang-btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6B4F3A;
+  border: 1px solid #C9963A;
+  padding: 10px 20px;
+  text-decoration: none;
+  background: rgba(250, 247, 242, 0.9);
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: #C9963A;
+  color: #FAF7F2;
+}
+
+/* Waitlist Button specific styles */
+.waitlist-btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6B4F3A;
+  border: 1px solid #C9963A;
+  padding: 16px 32px;
+  text-decoration: none;
+  background: white;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 50px; /* Rounded pill shape */
+  margin-bottom: 40px;
+}
+
+.waitlist-btn:hover {
+  background: #C9963A;
+  color: #FAF7F2;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 40px 32px 60px;
+  font-size: 12px;
+  color: #8C7B6E;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #6B4F3A;
+  margin: 0 12px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #C9963A;
+}
+
+.footer-copyright {
+  line-height: 1.6;
+  opacity: 0.8;
+}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <a class="lang-btn" href="es.html">Ver en Español</a>
+</div>
+
+<section class="hero">
+  <p class="hero-eyebrow">Take control of your debt</p>
+  <h1 class="hero-title"><em>Fiinly</em></h1>
+  <p class="hero-subtitle">Finally, Debt-Free</p>
+  <div class="hero-divider"></div>
+  <p class="hero-opening">Someone out there checked their bank account this morning and felt their stomach drop. This is for them.</p>
+  
+  <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 13L12 18L17 13M7 6L12 11L17 6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<section class="section">
+  <p class="section-label">The Problem</p>
+  <h2 class="section-headline">Debt doesn't start with <em>recklessness.</em><br>It starts with life.</h2>
+  <div class="section-body">
+    <p>A medical bill arrives. A job disappears. A baby comes before the savings do. Debt doesn't announce itself. It just shows up and quietly takes over.</p>
+    <p>And the tools that promised to help? They either fall short of actually helping or quietly turn around and sell their data to companies that want them to stay in debt, not get out of it</p>
+    <p>The people who need the most help are being let down by the very thing that was supposed to empower them.</p>
+  </div>
+</section>
+
+<div class="hr"><hr></div>
+
+<div class="pull-quote">
+  <blockquote>"What if someone finally built a tool that was completely, unconditionally on the user's side?"</blockquote>
+</div>
+
+<div class="hr"><hr></div>
+
+<section class="section">
+  <p class="section-label">The Idea</p>
+  <h2 class="section-headline">We built <em>Fiinly</em> for the person who's tired of being afraid to look at their bank account.</h2>
+  <div class="section-body">
+    <p>Your data stays with you. We never see it. We never sell it. We never profit from it.</p>
+    <p>Instead of cold, automated syncing that leaves you disconnected, Fiinly encourages a short mindful log of your purchases. To make this easy, our <strong>Onboard AI</strong> works in the background—it listens when you speak, type, or take a photo, categorizing your life instantly so you don't have to navigate a spreadsheet.</p>
+    <p>A beautiful dashboard shows you everything at once — where your money goes, what you owe, and how close you are to free. Smart reminders tell you when a bill is coming before it becomes a problem. No surprises. No late fees. No shame.</p>
+    <p>And for the first time, a real date. The exact day your debt is gone, if you follow your customized plan. Not a guess. Not a projection. A date you can circle. Count down to. Hold onto.</p>
+    <p>Fiinly puts control back in your hands.</p>
+  </div>
+</section>
+
+<div class="band">
+  <div class="band-inner">
+    <p class="section-label">Our Promise</p>
+    <h2 class="section-headline">Privacy isn't a feature.<br>It's the <em>foundation.</em></h2>
+    <div class="section-body">
+      <p>Most financial apps exist inside a larger machine. Your spending habits have value to advertisers, to partners, to people you'll never meet. That's not a bug. It's the model. And it works against you.</p>
+      <p>Fiinly is different. We earn when you pay for the app. Nothing more. Your data never leaves your device—even our AI processes your entries locally. We don't know what you spend. We don't want to. The moment we profit from your habits, we stop being on your side.</p>
+      <p>We'd rather be the most trusted tool in your pocket than the most profitable one in ours.</p>
+    </div>
+  </div>
+</div>
+
+<div class="pillars">
+  <p class="section-label">What Fiinly Does</p>
+  <h2 class="section-headline">Three things, <em>done right.</em></h2>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <div class="pillar-number">01</div>
+      <div class="pillar-title">Get out of debt</div>
+      <p class="pillar-text">It helps you map real plan. A real date. You choose the path—whether it's the <strong>Snowball Method</strong> for those early motivational wins or the <strong>Waterfall Method</strong> to kill high-interest debt first. The moment you see your finish line, something shifts. Debt becomes a distance, not a permanent condition.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">02</div>
+      <div class="pillar-title">Stay out of debt</div>
+      <p class="pillar-text">Paying it off is the beginning. Spending insights, customizable budget categories, and gentle AI-driven nudges keep you aligned long after the last payment. The same system stays with you, quietly reinforcing the habits that keep you free.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-number">03</div>
+      <div class="pillar-title">Win when life happens</div>
+      <p class="pillar-text">With Fiinly you wont be caught off guard. Finnly helps you set a realistic budget that also helps you save your money. So when your income suddnely falls short, Fiinly effortlessly helps adjust to those changes and helps you reallocate with confidence. Every change in life becomes a chance to stay ahead, not fall behind.</p>
+    </div>
+  </div>
+</div>
+
+<div class="hr"><hr></div>
+
+<section class="section">
+  <p class="section-label">Built for Real Life</p>
+  <h2 class="section-headline">Money is rarely just <em>one person's problem.</em></h2>
+  <div class="section-body">
+    <p>A couple sits at a kitchen table. One knows what was spent. The other doesn't. That moment, the tension, the silence, it's one of the most common sources of stress in a home.</p>
+    <p>Fiinly integrates with Apple Family Sharing so households move together. Same budget. Same goals. Same page. When a family stops guessing and starts seeing, something quietly changes. The table gets a little quieter. In the best possible way.</p>
+    
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Individual</h3>
+        <p class="cost">$9.99 / mo</p>
+        <p class="trial">1 Week Free Trial</p>
+        <p class="pillar-text">Full access to AI-assisted entry, debt payoff strategies, and complete privacy.</p>
+      </div>
+      <div class="price-card featured">
+        <h3>Family</h3>
+        <p class="cost">$12.99 / mo</p>
+        <p class="trial">1 Week Free Trial</p>
+        <p class="pillar-text">Everything in Individual, plus shared profiles so you can stay on the same page, together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hr"><hr></div>
+
+<section class="section">
+  <p class="section-label">Why This Matters</p>
+  <h2 class="section-headline">We're not asking you to believe in an app. We're asking you to believe <em>that financal freedom isnt as farfetched as it seems.</em></h2>
+  <div class="section-body">
+    <p>Financial stress doesn't stay in the spreadsheet. It follows you to bed. It sits with your familiy at dinner. It shows up in arguments that were never really about money, but always were.</p>
+    <p>Fiinly can't fix everything. But it can give you something you may of never had: a clear, honest picture of where you stand and a path forward that you can actually trust.</p>
+    <p>Not someday. Now. On your terms. On Your device. In your hands.</p>
+    <p>We believe technology can be genuinely, unconditionally good for people. We're building it. And we'd love for you to give Fiinly a chance.</p>
+  </div>
+</section>
+
   <h1 class="hero-title"><em>Fiinly</em></h1>
   <p class="hero-subtitle">Finally, Debt-Free</p>
   <div class="hero-divider"></div>
