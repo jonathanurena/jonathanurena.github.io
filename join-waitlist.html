@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the List | Fiinly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #FAF7F2;
+  color: #1A1714;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 32px;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 40%, #EDD9B8 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 9vw, 110px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: #1A1714;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #6B4F3A;
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-style: italic;
+  color: #8C7B6E;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+/* Form Styling */
+.form-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 0.6s;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 24px;
+  border: 1px solid #C9963A;
+  background: white;
+  border-radius: 50px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #1A1714;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 3px rgba(201, 150, 58, 0.2);
+}
+
+.submit-btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FAF7F2;
+  border: 1px solid #C9963A;
+  padding: 18px 32px;
+  cursor: pointer;
+  background: #C9963A;
+  transition: background 0.2s ease, transform 0.2s ease;
+  border-radius: 50px;
+}
+
+.submit-btn:hover {
+  background: #6B4F3A;
+  border-color: #6B4F3A;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  text-align: center;
+  padding: 40px 32px;
+  font-size: 12px;
+  color: #8C7B6E;
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1 class="hero-title"><em>Fiinly</em></h1>
+  <p class="hero-subtitle">Be the first to know when we launch.</p>
+
+  <div class="form-container">
+    <form method="post" action="https://forms.un-static.com/forms/YOUR_ENDPOINT_REFERENCE" class="waitlist-form">
+      <!-- Standardized to just email for a cleaner 'Waitlist' look, added hidden name field to satisfy baseline -->
+      <input type="hidden" name="name" value="Waitlist Subscriber">
+      
+      <input type="email" name="email" class="input-field" placeholder="email@example.com" required>
+      
+      <!-- Hidden textarea to match your baseline requirement without cluttering UI -->
+      <textarea name="message" style="display:none;">New waitlist signup from landing page.</textarea>
+      
+      <button type="submit" class="submit-btn">Join The List</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copyright">
+    &copy; 2026 Ureña Studios. All rights reserved.<br>
+    Fiinly is an application developed and owned by Jonathan Urena.
+  </div>
+</footer>
+
+</body>
+</html>
