@@ -140,13 +140,16 @@ footer {
   <p class="hero-subtitle">Be the first to know when we launch.</p>
 
   <div class="form-container">
-    <form method="post" action="https://forms.un-static.com/forms/YOUR_ENDPOINT_REFERENCE" class="waitlist-form">
-      <!-- Standardized to just email for a cleaner 'Waitlist' look, added hidden name field to satisfy baseline -->
+    <!-- Updated with your direct un-static link -->
+    <form method="post" action="https://forms.un-static.com/forms/3159ecd4e20d2c5742ef8bdb2c4df99ab7fd3e8e" class="waitlist-form">
+      
+      <!-- This line tells the form where to go after clicking Join -->
+      <input type="hidden" name="*redirect" value="success.html">
+      
       <input type="hidden" name="name" value="Waitlist Subscriber">
       
-      <input type="email" name="email" class="input-field" placeholder="email@example.com" required>
+      <input type="email" name="email" class="input-field" placeholder="email@jonathanurena.com" required>
       
-      <!-- Hidden textarea to match your baseline requirement without cluttering UI -->
       <textarea name="message" style="display:none;">New waitlist signup from landing page.</textarea>
       
       <button type="submit" class="submit-btn">Join The List</button>
