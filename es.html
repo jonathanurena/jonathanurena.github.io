@@ -404,7 +404,7 @@ footer {
   margin: 0 12px;
   transition: color 0.2s ease;
 }
-  .waitlist-btn {
+.waitlist-btn {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
@@ -419,6 +419,19 @@ footer {
   transition: background 0.2s ease, color 0.2s ease;
   border-radius: 50px; /* Rounded pill shape */
   margin-bottom: 40px;
+}
+
+/* Animation for the hero button specifically */
+.hero .waitlist-btn {
+  opacity: 0;
+  animation: fadeUp 0.9s ease forwards 1.2s;
+  position: relative;
+  z-index: 11;
+}
+
+.waitlist-btn:hover {
+  background: #C9963A;
+  color: #FAF7F2;
 }
 
 .footer-links a:hover {
