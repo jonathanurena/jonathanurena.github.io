@@ -512,6 +512,19 @@ body {
   <p class="tagline">Finalmente, libre de deudas</p>
 </div>
 
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Our Privacy Policy</a>
+    <a href="terms-of-use.html">Our Terms of Use</a>
+    <a href="private-policy.html">Contact</a>
+  </div>
+  <div class="footer-copyright">
+&copy; 2026 Ureña Studios. All rights reserved.<br>
+    Fiinly is an application developed and owned by Jonathan Ureña.
+</footer>
+
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -519,7 +532,7 @@ body {
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.section, .pull-quote, .band, .pillars, .close-section').forEach(el => observer.observe(el));
+  document.querySelectorAll('.section, .pull-quote, .band, .pillars, .hero').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
