@@ -389,26 +389,22 @@ body {
   color: #FAF7F2;
 }
 
+/* Waitlist Button specific styles */
 .waitlist-btn {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #6B4F3A;
   border: 1px solid #C9963A;
-  padding: 12px 24px;
+  padding: 16px 32px;
   text-decoration: none;
-  background: rgba(250, 247, 242, 0.9);
-  transition: all 0.2s ease;
-  border-radius: 50px; /* This makes it rounded */
-  margin: 40px auto;   /* This creates equal, dynamic space above and below */
-}
-
-.waitlist-btn:hover {
-  background: #C9963A;
-  color: #FAF7F2;
+  background: white;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 50px; /* Rounded pill shape */
+  margin-bottom: 40px;
 }
 
 .waitlist-btn:hover {
@@ -459,7 +455,6 @@ footer {
   <p class="hero-subtitle">Finally, Debt-Free</p>
   <div class="hero-divider"></div>
   <p class="hero-opening">Someone out there checked their bank account this morning and felt their stomach drop. This is for them.</p>
-  
   
   <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
