@@ -1,4 +1,4 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -65,7 +65,6 @@ body {
   opacity: 0;
   animation: fadeUp 0.9s ease forwards 0.4s;
   position: relative;
-  padding-right: 0.05em; /* This nudges the text slightly left to compensate for the italic lean */
 }
 
 .hero-title em {
@@ -137,7 +136,6 @@ body {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  text-align: center; /* Added for centering on desktop */
 }
 
 .section.visible {
@@ -200,7 +198,6 @@ body {
   color: #6B4F3A;
   border-left: 3px solid #C9963A;
   padding-left: 32px;
-  text-align: left; /* Keep quote text left-aligned to the border */
 }
 
 .band {
@@ -210,7 +207,6 @@ body {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  text-align: center; /* Added for centering */
 }
 
 .band.visible {
@@ -234,7 +230,6 @@ body {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
-  text-align: center; /* Added for centering */
 }
 
 .pillars.visible {
@@ -247,7 +242,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 40px;
   margin-top: 48px;
-  text-align: left; /* Keep pillar details left aligned for readability */
 }
 
 .pillar {
@@ -582,8 +576,9 @@ footer {
 </section>
 
 <div class="close-section">
-  <div class="brand">Fiinly</div>
+  <div class="brand">Fiinly.</div>
   <p class="tagline">Finally, Debt-Free.</p>
+  
   <a href="join-waitlist.html" class="waitlist-btn">Join the Waitlist</a>
 
   <div class="scroll-indicator" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="position: static; transform: none; animation: bounce 2s infinite;">
